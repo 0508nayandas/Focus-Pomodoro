@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    -o-object-fit: fill;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-size: cover;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    animation: changeBackground 100s infinite;
+}
+
+.timer {
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    letter-spacing: 4.5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.968), 0px 0px 20px rgba(0,0,0,0.9), 0px 0px 30px rgba(0,0,0,0.5);
+    background-color: #45ffca48;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.container h2 {
+    font-size: 22px;
+    margin: 10px 0 30px 0;
+}
+
+.buttons {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: bottom;
+}
+
+.buttons button {
+    font-size: 22px;
+    font-weight: 700;
+    padding: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--clr);
+    color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.buttons button:hover {
+    transform: scale(1.1);
+}
+
+.pomoCountsDisplay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    animation: swipe-up 1s ease-in;
+}
+
+.pomoCountsDisplay span {
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.pomoCountsDisplay p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+@keyframes swipe-up {
+    0% {
+        opacity: 1;
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*small screen code*/
+@media screen and (max-width: 520px) {
+    .container {
+        background-size: cover;
+        margin-block: 40px;
+    }
+
+    .timer {
+        width: 220px;
+        height: 220px;
+        font-size: 40px;
+        margin-top: 110px; /* Added to move the timer down 20px*/
+    }
+
+    .buttons {
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px; /* Added to move the buttons down 20px*/
+    }
+
+    .buttons button {
+        width: 20%; /* Fixed typo (was .buttons buttons) */
+        margin: 5px;
+    }
+}
+
+@keyframes changeBackground {
+    0% {
+        background-image: url('budhafull.png');
+    }
+    15% {
+        background-image: url('a jungle.png');
+    }
+    30% {
+        background-image: url('deer.png');
+    }
+    45% {
+        background-image: url('tiger.png');
+    }
+    60% {
+        background-image: url('boat.png');
+    }
+    75% {
+        background-image: url('shiva.png');
+    }
+    90% {
+        background-image: url('night.png');
+    }
+    100% {
+        background-image: url('tree.png');
+    }
+}
+
+/* For mobile screens */
+@media screen and (max-width: 600px) {
+    @keyframes changeBackground {
+        0% {
+            background-image: url('m_budha.jpg');
+        }
+        15% {
+            background-image: url('m_house.jpg');
+        }
+        30% {
+            background-image: url('mdeer.png');
+        }
+        45% {
+            background-image: url('m_tiger.jpg');
+        }
+        60% {
+            background-image: url('m_boat.jpg');
+        }
+        75% {
+            background-image: url('m_shiva.png');
+        }
+        90% {
+            background-image: url('m_night.png');
+        }
+        100% {
+            background-image: url('mtree.png');
+        }
+    }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    height: 100vh;
+}
+
+.containerSong {
+    background-color: #4caf4f03;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 999;
+}
+
+h1 {
+    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+
+audio {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px;
+    cursor: pointer;
+    color: #fff;/*#fff*/
+}
+
+li:hover {
+    color: #ddd;
+}
+
+@media only screen and (max-width: 600px) {
+    .containerSong {
+        width: 100%;/*change the music player */
+    }
+    h1 {
+        margin: center;
+    }
+}
+
+/* Add this media query at the end of your CSS */
+@media screen and (max-width: 600px) {
+    .buttons button {
+        font-size: 15px; /* Adjust the font size as needed */
+    }
+}
+
+/* Add this media query at the end of your CSS */
+@media only screen and (max-width: 600px) {
+    .containerSong {
+        top: 20px; /* Adjust the top position as needed */
+        left: 50%; /* Center the container horizontally */
+        transform: translateX(-50%);
+    }
+}
